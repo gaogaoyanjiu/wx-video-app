@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.98",
+	"libVersion": "2.3.1",
 	"appid": "wx382cdc22a8ddbafc",
-	"projectname": "imooc-video",
+	"projectname": "wx-video-app",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -1,0 +1,35 @@
+<!--pages/video/video.wxml-->
+
+
+
+<!-- 默认宽度300px、高度225px，可通过wxss设置宽高。 -->
+<video id="v_id"
+src="http://192.168.1.102:8081/180425CFA4RB6T0H/video/cover/巨齿鲨HD.mp4"
+muted="{{false}}"
+initial-time="1"
+duration="01:54:39"
+controls="{{true}}"
+danmu-list="{{danmuList}}"
+enable-danmu="{{true}}"
+danmu-btn="{{true}}"
+autoplay="{{false}}"
+loop="{{true}}"
+page-gesture="{{true}}"
+direction="90"
+show-progress="{{true}}"
+show-fullscreen-btn="{{true}}"
+show-play-btn="{{true}}"
+show-center-play-btn="{{true}}"
+enable-progress-gesture="{{true}}"
+objectFit="cover"
+
+poster="http://192.168.1.102:8081/180425CFA4RB6T0H/video/cover/jcs.jpg"
+
+bindplay="bindplay"
+bindpause="bindpause"
+width="800px"
+
+
+>
+
+</video>

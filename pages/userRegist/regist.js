@@ -2,19 +2,37 @@ const app = getApp()
 
 Page({
     data: {
+
+      screenWidth:350,
       imgUrls: [
-        'http://ykimg.alicdn.com/product/image/2018-09-16/34771a98eb61a5e662ea22e71a56853b.jpg',
-        'http://ykimg.alicdn.com/product/image/2018-09-15/ec824da32b1e8fe623bf484240ed3cc7.jpg',
-        'http://ykimg.alicdn.com/product/image/2018-09-15/5c95f634fadd6136a2f8b288b9c65e51.jpg',
-        'http://ykimg.alicdn.com/product/image/2018-09-16/b37afafb46961e4361845dd9fb48b473.jpg',
-        'http://ykimg.alicdn.com/product/image/2018-09-05/a0fc1a79223ec8d6cb0cd76a176ebc44.jpg'
+        // 'http://ykimg.alicdn.com/product/image/2018-09-16/34771a98eb61a5e662ea22e71a56853b.jpg',
+        // 'http://ykimg.alicdn.com/product/image/2018-09-15/ec824da32b1e8fe623bf484240ed3cc7.jpg',
+        // 'http://ykimg.alicdn.com/product/image/2018-09-15/5c95f634fadd6136a2f8b288b9c65e51.jpg',
+        // 'http://ykimg.alicdn.com/product/image/2018-09-16/b37afafb46961e4361845dd9fb48b473.jpg',
+        // 'http://ykimg.alicdn.com/product/image/2018-09-05/a0fc1a79223ec8d6cb0cd76a176ebc44.jpg'
+
+
+        app.serverUrl + '/static/111.jpg',
+        app.serverUrl + '/static/222.jpg',
+        app.serverUrl + '/static/333.jpg',
+        app.serverUrl + '/static/444.jpg',
+        app.serverUrl + '/static/555.jpg'
       ],
       indicatorDots: true,
       autoplay: true,
       interval: 4000,
       duration: 2000
     },
+
+onLoad:function(parems){
+  var me = this;
+  var screenWidth = wx.getSystemInfoSync().screenWidth;
+  me.setData({
+    screenWidth: screenWidth,
+  });
+},
   doRegist:function(e){
+    var me=this;
     var formObject =e.detail.value;
     var username=formObject.username;
     var password=formObject.password;
@@ -47,7 +65,11 @@ Page({
                 duration: 3000
               });
 
-              app.userInfo=res.data.data;
+            //  app.userInfo=res.data.data;
+
+              //修改原有全局对象为本地缓存
+              app.setGlobalUserInfo(res.data.data);
+              me.goLoginPage();
 
             }else if(status==500){
               wx.showToast({
@@ -64,7 +86,8 @@ Page({
 
     }
 
-    console.log(username+':'+password)
+    console.log(username+':'+password);
+  
   },
    goLoginPage:function() {
     wx.redirectTo({

@@ -1,16 +1,21 @@
 {
   "pages": [
     "pages/userLogin/login",
+    "pages/index/index",
+    "pages/videoinfo/videoinfo",
     "pages/mine/mine",
-    "pages/userRegist/regist",
+    "pages/report/report",
     
+    "pages/userRegist/regist",
     "pages/swiper/swiper",
-    "pages/index/index"
+    "pages/chooseBgm/chooseBgm",
+    "pages/searchVideo/searchVideo",
+    "pages/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "肥猫影视",
+    "navigationBarTitleText": "肥猫木屋",
     "navigationBarTextStyle": "black"
   },
   "debug": true

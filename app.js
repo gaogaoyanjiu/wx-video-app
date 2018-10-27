@@ -1,13 +1,17 @@
 //app.js
 App({
+ //serverUrl: "http://localhost:8081",
  serverUrl: "http://192.168.200.1:8081",
-  //serverUrl: "https://93d6df1c.ngrok.io",
+ //serverUrl: "http://192.168.43.188:8081",
+ // serverUrl: "http://192.168.1.101:8081",
+  
   userInfo: null,
 
+  //设置本地缓存,供下次进入程序时不需登录
   setGlobalUserInfo: function(user) {
     wx.setStorageSync("userInfo", user);
   },
-
+  //再次进入程序,获取本地缓存
   getGlobalUserInfo: function () {
     return wx.getStorageSync("userInfo");
   },
